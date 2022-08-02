@@ -1,10 +1,11 @@
-{% extends "_base.html" %}
+{% extends "base-vue.html" %}
 
 {% block title %}Index{% endblock title %}
 {% block content %}
-    <div class="indexApp">index page</div>
     {% if user.is_authenticated %}
-        <p>Welcome, {{ user.username }}</p>
+        <h2>Welcome, {{ user.username }}</h2>
+        <div id="app"></div>
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
     {% else %}
         <p>Please login to access this page:</p>
         <a href="{% url 'login'%}">Log In</a>
