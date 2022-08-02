@@ -9,6 +9,7 @@ djangorestframework = "*"
 numpy = "*"
 pandas = "*"
 altair = "*"
+channels = "*"
 
 [dev-packages]
 autopep8 = "*"
