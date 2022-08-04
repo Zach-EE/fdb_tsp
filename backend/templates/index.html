@@ -1,13 +1,16 @@
-{% extends "base-vue.html" %}
+{% extends "base-vue.html" %} {% block title %}Index{% endblock title %} 
+{% block content %} {% if user.is_authenticated %}
+<h2>Welcome, {{ user.username }}</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-8 mx-auto mt-5">
+        <div id="app">Why are you Here?</div>
+    </div>
+  </div>
+</div>
 
-{% block title %}Index{% endblock title %}
-{% block content %}
-    {% if user.is_authenticated %}
-        <h2>Welcome, {{ user.username }}</h2>
-        <div id="app"></div>
-        <p><a href="{% url 'logout' %}">Log Out</a></p>
-    {% else %}
-        <p>Please login to access this page:</p>
-        <a href="{% url 'login'%}">Log In</a>
-    {% endif %}
-{% endblock content %}
+<p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+<p>Please login to access this page:</p>
+<a href="{% url 'login'%}">Log In</a>
+{% endif %} {% endblock content %}

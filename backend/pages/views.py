@@ -6,3 +6,6 @@ class IndexPageView(TemplateView):
     
 class HomePageView(TemplateView):
     template_name = 'home.html'
+
+def wsTest(request):
+    return render(request, '_base.html', context={'text':'test test test'})

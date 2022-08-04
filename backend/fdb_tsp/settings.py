@@ -33,14 +33,15 @@ LOGOUT_REDIRECT_URL = 'home'
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
+    'rest_framework',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    'rest_framework',
     
     # Local Apps
     'accounts.apps.AccountsConfig',
@@ -77,6 +78,7 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = 'fdb_tsp.asgi.application'
 WSGI_APPLICATION = 'fdb_tsp.wsgi.application'
 
 
